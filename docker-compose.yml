@@ -1,0 +1,26 @@
+version: '3.5'
+services:
+  nodejs-sample:
+    build: .
+    ports:
+      - '8888:8888'
+    depends_on:
+      - db
+    networks:
+      - app-network
+    environment:
+      - NODE_ENV=prod
+  db:
+    image: mongo:5.0.14
+    ports:
+      - '27018:27017'
+    volumes:
+      - ./docker/data/mongo/db:/data/db
+    networks:
+      - app-network
+    command:
+      - sh
+      - -c
+
+networks:
+  app-network:

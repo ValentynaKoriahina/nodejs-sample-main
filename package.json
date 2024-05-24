@@ -1,0 +1,52 @@
+{
+  "name": "nodejs-sample",
+  "version": "1.0.0",
+  "description": "This is an example node js project using typescript, express, mongoose, mocha",
+  "author": "Artem Petrenko",
+  "license": "ISC",
+  "main": "index.js",
+  "scripts": {
+    "build": "npx tsc",
+    "devel": "set NODE_ENV=dev && nodemon --exec ts-node -r tsconfig-paths/register ./src/index.ts",
+    "test": "mocha --timeout 30000 --exit -r ts-node/register -r tsconfig-paths/register src/test/**/*.test.ts",
+    "coverage": "nyc npm run test",
+    "start": "npm run build && node ./dist/index.js",
+    "lint": "eslint \"{src,apps,libs,test}/**/*.ts\" --fix"
+  },
+  "nyc": {
+    "check-coverage": true,
+    "lines": 80
+  },
+  "_moduleAliases": {
+    "src": "dist"
+  },
+  "dependencies": {
+    "chai-http": "4.3.0",
+    "express": "^4.19.2",
+    "http-status": "^1.7.4",
+    "log4js": "6.9.1",
+    "module-alias": "2.2.3",
+    "mongoose": "^7.6.12"
+  },
+  "devDependencies": {
+    "@types/chai": "4.3.5",
+    "@types/express": "^4.17.21",
+    "@types/mocha": "10.0.1",
+    "@types/mongoose": "^5.11.97",
+    "@types/node": "16.11.6",
+    "@types/sinon": "10.0.14",
+    "@typescript-eslint/eslint-plugin": "5.59.0",
+    "@typescript-eslint/parser": "5.59.0",
+    "chai": "4.3.7",
+    "eslint": "8.39.0",
+    "eslint-config-prettier": "8.8.0",
+    "mocha": "10.2.0",
+    "mongodb-memory-server": "8.12.2",
+    "nodemon": "^3.1.0",
+    "nyc": "15.1.0",
+    "sinon": "15.0.4",
+    "ts-node": "10.9.1",
+    "tsconfig-paths": "4.2.0",
+    "typescript": "5.4.5"
+  }
+}
