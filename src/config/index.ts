@@ -4,6 +4,7 @@ type ConfigType = {
   port: number;
   address: string;
   mongoAddress: string;
+  chessApiAddress: string;
   log4js: Configuration;
 };
 
@@ -11,6 +12,7 @@ const devConfig: ConfigType = {
   port: 8888,
   address: 'localhost',
   mongoAddress: 'mongodb://127.0.0.1:27018',
+  chessApiAddress: 'http://localhost:8080/api',
   log4js: {
     appenders: {
       console: { type: 'console' },
@@ -36,6 +38,7 @@ const prodConfig: ConfigType = {
   port: 8888,
   address: '0.0.0.0',
   mongoAddress: 'mongodb://db:27017',
+  chessApiAddress: 'http://localhost:8080/api/',
   log4js: {
     appenders: {
       console: { type: 'console' },
