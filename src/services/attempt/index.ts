@@ -3,6 +3,7 @@ import { fetchDataFromSpringBootAPI } from 'src/services/exercise';
 
 
 export const addAttempt = async (data: { studentId: string, timeSpent: number, solved: boolean, exerciseId: number }) => {
+
   const { studentId, timeSpent, solved, exerciseId } = data;
 
   // Проверка валидности exerciseId
